@@ -1,0 +1,321 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New';
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+/* Navigation bar*/
+nav {
+    background-color: #141b44 !important;
+    width: 100%;
+    border-bottom: solid black 2px;
+    z-index: 1;
+    margin: 0px !important;
+    position:fixed;
+    overflow:hidden;
+    list-style-type: none;
+    color:white;
+    /*padding: 35px 10px;*/
+}
+
+
+
+nav img {
+    height: 100px;
+}
+
+.navbar-header, .navbar-login
+{
+    vertical-align: middle;
+
+}
+.navbar-login
+{
+    text-decoration: none;
+    list-style: none;
+    background-color: transparent;
+    text-align: right;
+
+}
+.navbar-login a
+{
+    color: white;
+
+}
+.navbar-login a:hover
+{
+    color: white;
+
+}
+
+.glyphicon-shopping-cart{
+    font-size: 40px;
+}
+
+.navbar-item{
+    font-size: 20px;
+}
+
+.cart-img{
+    height:  25px;
+}
+
+
+nav h1
+{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 28px;
+    padding: 35px 0px 35px 20px;
+}
+nav h1 img
+{
+}
+
+
+
+.nav .left-nav-item {
+    float: left;
+    padding:15px;
+    z-index:1;
+}
+
+.nav .right-nav-item {
+    float: right;
+    padding:15px;
+    z-index:1;
+}
+
+.logo {
+    margin: 0px;
+    margin-right:40px;
+}
+
+.search-input {
+    border-style: solid;
+    width: 600px;
+    border-color: black;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.cart-access-li {
+    height: 100%;
+    float:right;
+    z-index: 1;
+    padding:0px;
+    border-left: solid black 2px;
+}
+
+.cart-access-li:hover{
+    background-color: blanchedalmond;
+}
+
+.cart-access {
+    width: 130px;
+    height: 100%;
+}
+
+.num-products {
+    margin: 10px 10px 5px 10px;
+    width: 70px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: darkgray;
+}
+
+.cart-logo {
+    padding: 5px 0px 0px 30px;
+}
+
+.login-button {
+     border-radius: 20px;
+     width: 130px;
+     height: 30px;
+     border-style: none;
+     background-color:darkgray;
+     display: inline-block;
+}
+
+.login-button:hover {
+    background-color: blanchedalmond;
+}
+
+/* Side bar Navigation */
+.side-nav{ 
+    width: 100%;
+    height: 100%;
+    background-color: #150603;
+    color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+.visible {
+    visibility: visible;
+    display: block;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.cat-title {
+    padding: 10px;
+    border: ridge grey 7.5px;
+    font-weight: bolder;
+    font-size: 30px;
+    margin:0px;
+}
+
+/*.cat-title h3{
+    font-weight: bolder;
+    font-size: 30px;
+    }*/
+
+.cat-box {
+    border-bottom: solid grey 2px;
+    text-decoration: none;
+    display: inline-block;
+    padding:20px 0px;
+    color:#e6e5e5;
+    min-width: 100%;
+    background-color: #1c0c09;
+    font-weight: bolder;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+
+.cat-box-extent{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    width:100%;
+    font-size: 12;
+}
+
+.cat-box:hover {
+    /*text-decoration: none;*/
+    color:white;
+
+}
+
+
+.cat-box:visited {
+    /*color:black;*/
+}
+
+.cat-box-extent li {
+    height: 20px;
+    margin-top: 10px;
+}
+
+.cat-box-extent li input{
+    border-style: solid 1px black;
+    border-radius: 10px;
+    float:right; 
+}
+
+/* main site */
+.iframe{
+    background-color: #8e8e90;
+    width:100%;
+    height:calc(100vh); 
+    text-align: center;
+    display: inline-block;
+}
+
+.product-box{
+    margin: 30px 5px 0px 5px;
+    padding:10px;
+    width: 100%;
+    background-color: #47474f;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 12.5px;
+}
+.product-box h2 a
+{
+    font-size: 20px;
+    font-weight: bold;
+    color:#e6e5e5;
+}
+.product-img {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.price{
+    float:left;
+    text-align: center;
+    width: 160px;
+    padding:10px 0px;
+    color:#e6e5e5;
+    font-size: 18px;
+    background-color:  #1c0c09; 
+}
+
+.add-cart-button {
+    float: right;
+    height: 40px;
+    color:white;
+    border-radius: 10px;
+    background-color: darkgray;
+    border-style:solid;
+
+}
+
+footer
+{
+    background-color: #141b44;
+}
+footer h3
+{
+    color:white;
+    padding: 30px 0px 30px 20px;
+    margin:0;
+}
+
+/*For screen more than 500px*/
+@media only screen and (min-width:500px) 
+{
+    .product-box{
+        width: 48%;
+    }
+}
+
+@media only screen and (min-width:1080px) 
+{
+    .product-box{
+        width: 24%;
+    }
+
+    .side-nav{ 
+    width: 18%;
+    position: fixed;
+}
+    .iframe
+    {
+    width: 100%;
+    padding-left: 18%;
+    }
+    footer
+    {
+        padding-left: 18%;
+    }
+}
+
+.main-container {
+    padding-left: 18%;
+    height: 100%;
+    min-height: 1000px;
+}
