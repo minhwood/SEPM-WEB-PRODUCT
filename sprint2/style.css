@@ -11,24 +11,17 @@ html,body {
 
 /* Navigation bar*/
 nav {
-    background-color: #141b44 !important;
+    background-color: #141b44;
     width: 100%;
     border-bottom: solid black 2px;
     z-index: 1;
-    margin: 0px !important;
+    margin: 0px;
     position:fixed;
     overflow:hidden;
     list-style-type: none;
     color:white;
     /*padding: 35px 10px;*/
 }
-
-
-
-nav img {
-    height: 100px;
-}
-
 .navbar-header, .navbar-login
 {
     vertical-align: middle;
@@ -38,7 +31,9 @@ nav img {
 {
     text-decoration: none;
     list-style: none;
+    font-size: 25px;
     background-color: transparent;
+    padding:52px 50px;
     text-align: right;
 
 }
@@ -51,18 +46,6 @@ nav img {
 {
     color: white;
 
-}
-
-.glyphicon-shopping-cart{
-    font-size: 40px;
-}
-
-.navbar-item{
-    font-size: 20px;
-}
-
-.cart-img{
-    height:  25px;
 }
 
 
@@ -152,6 +135,7 @@ nav h1 img
     height: 100%;
     background-color: #150603;
     color: white;
+    padding-top: 150px;
     display: inline-block;
     text-align: center;
 }
@@ -241,6 +225,7 @@ nav h1 img
     display: inline-block;
     vertical-align: top;
     border-radius: 12.5px;
+    text-align: center;
 }
 .product-box h2 a
 {
@@ -249,9 +234,10 @@ nav h1 img
     color:#e6e5e5;
 }
 .product-img {
-    width: 100%;
+    width: 280px;
     height: 200px;
     margin-bottom: 20px;
+    border: 5px;
 }
 
 .price{
@@ -272,6 +258,14 @@ nav h1 img
     background-color: darkgray;
     border-style:solid;
 
+}
+
+.productDisplay-cart
+{
+    margin:7.5px 7.5px 0px 0px;
+    font-size: 30px;
+    float: right;
+    color: white;
 }
 
 footer
@@ -298,6 +292,11 @@ footer h3
     .product-box{
         width: 24%;
     }
+    .container
+    {
+            padding-top:50      px;
+            padding-bottom: 25px;
+    }
 
     .side-nav{ 
     width: 18%;
@@ -307,15 +306,16 @@ footer h3
     {
     width: 100%;
     padding-left: 18%;
+    padding-top: 150px;
     }
     footer
     {
         padding-left: 18%;
     }
-}
 
-.main-container {
-    padding-left: 18%;
-    height: 100%;
-    min-height: 1000px;
+    .add-cart-button {
+    height: 35px;
+    border-radius: 10px;
+
+}
 }

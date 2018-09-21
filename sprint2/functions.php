@@ -5,17 +5,32 @@ class allDisplayFunctions
 
 	function displayProducts($productType)
 	{
-		$url = 'products.json'; 
+        $url = 'products.json'; 
         $data = file_get_contents($url); 
         $products = json_decode($data);
         foreach ($products->$productType as $product) 
         {
+            $test=0;
             echo "<div class='product-box'>
             <h2><a href='productDetails.php?productName=$product->name&productType=$productType'>$product->name</a></h2>
-            <a href='productDetails.php?productName=$product->name&productType=$productType'><img class='product-img' src='$product->image'></a><br>
-            <div class='price'>$$product->price </div>
-            <a href='cart.php?productName=$product->name&productType=$productType'><img class='add-cart-button ' src='img/add-cart.svg' alt='addToCartButton'>
-                      </div>";
+            <a href='productDetails.php?productName=$product->name&productType=$productType'><img class='product-img' src='$product->image'></a>
+            <div class='price'>$$product->price </div>";
+            if(isset($_SESSION['cart']))
+            foreach ($_SESSION['cart'] as $key => $value)
+                { 
+                    if(strcmp($product->name,$value->name)==0)
+                    {
+                        $test=1;
+                        break;
+                    }
+                }
+            if($test==0)
+            echo "<a href='cart.php?productName=$product->name&productType=$productType&page='index.php''><img class='add-cart-button ' src='img/add-cart.svg' alt='addToCartButton'>";
+            else
+            {
+                echo "<a href='yourcart.php' target='Test'><span class='glyphicon glyphicon-shopping-cart productDisplay-cart'></span></a>";
+            }
+            echo "</div>";
         }
 	}
 
@@ -29,12 +44,28 @@ class allDisplayFunctions
         	$productTypes=$product;
         	foreach($productTypes as  $product)
         	{
+            $test=0;
             echo "<div class='product-box'>
             <h2><a href='productDetails.php?productName=$product->name&productType=$productType'>$product->name</a></h2>
             <a href='productDetails.php?productName=$product->name&productType=$productType'><img class='product-img' src='$product->image'></a><br>
-            <div class='price'>$$product->price </div>
-            <a href='cart.php?productName=$product->name&productType=$productType'><img class='add-cart-button ' src='img/add-cart.svg' alt='addToCartButton'></a>
-                      </div>";
+            <div class='price'>$$product->price </div>";
+
+            if(isset($_SESSION['cart']))
+            foreach ($_SESSION['cart'] as $key => $value)
+                { 
+                    if(strcmp($product->name,$value->name)==0)
+                    {
+                        $test=1;
+                        break;
+                    }
+                }
+            if($test==0)
+            echo "<a href='cart.php?productName=$product->name&productType=$productType&page='index.php''><img class='add-cart-button ' src='img/add-cart.svg' alt='addToCartButton'></a>";
+            else
+            {
+                echo "<a href='yourcart.php' target='Test'><span class='glyphicon glyphicon-shopping-cart productDisplay-cart'></span></a>";
+            }
+            echo "</div>";
             }
         }
 	}
@@ -43,11 +74,13 @@ class allDisplayFunctions
 
 	function displayDetails($productType,$productName)
 	{
-		$url = 'products.json'; 
+        $test=0;
+        $url = 'products.json'; 
         $data = file_get_contents($url); 
         $products = json_decode($data);
         foreach ($products->$productType as $product) 
         {
+
         	if(strcmp($product->name,$productName)==0)
         	{
             echo "<div class='pDesc'>
@@ -56,9 +89,24 @@ class allDisplayFunctions
             <div class='pDesc_left_image'><img 
             src='$product->image' style='min-width:250px;max-width:400px;'></div>
             <div class='pDesc_left_price'>Price: $$product->price
-            </div>
-            <a href='cart.php?productName=$product->name&productType=$productType'><img class='pDesc_left_button' src='img/add-cart.svg' alt='addToCartButton'></a>
-            </div>
+            </div>";
+            if(isset($_SESSION['cart']))
+            foreach ($_SESSION['cart'] as $key => $value)
+                { 
+                    if(strcmp($productName,$value->name)==0)
+                    {
+                        $test=1;
+                        break;
+                    }
+                }
+            if($test==0)
+            echo "
+            <a href='cart.php?productName=$product->name&productType=$productType&page='productDetails.php''><img class='pDesc_left_button' src='img/add-cart.svg' alt='addToCartButton'></a>";
+            else
+            {
+                echo "<a href='yourcart.php' target='Test'><span class='glyphicon glyphicon-shopping-cart details-cart'></span></a>";
+            }
+            echo "</div>
             <div class='pDesc_right'>
             <div class='pDesc_right_title'>Description</div>
            	<div class='pDesc_right_desc'>$product->Description</div>
@@ -71,7 +119,7 @@ class allDisplayFunctions
         }
 	}
 
-	function addToCart($productType,$productName)
+	function addToCart($productType,$productName,$page)
 	{
         // session_destroy();
         $test=0;
@@ -80,37 +128,31 @@ class allDisplayFunctions
         $products = json_decode($data);
         foreach ($products->$productType as $product) 
         {
-            if(!isset($_SESSION['cart'])&&strcmp($product->name,$productName)==0)
+            if(strcmp($product->name,$productName)==0)
             {
                 $_SESSION['cart'][]=$product;
                 break;
             }
-            else if(isset($_SESSION['cart']))
-            {
-                foreach ($_SESSION['cart'] as $key => $value)
+        }
+        header('Location:index.php');
+     }
+
+     function removeItemFromCart($productName)
+    {
+        // session_destroy();
+        $test=0;
+        $url = 'products.json'; 
+        $data = file_get_contents($url); 
+        $products = json_decode($data);
+        if(isset($_SESSION['cart']))
+        foreach ($_SESSION['cart'] as $key => $value)
                 { 
-                    if(strcmp($productName,$value->name)==0&&$test==0)
+                     if(strcmp($productName,$value->name)==0)
                     {
-                        $value->no++;
-                        $test=1;
-                        break;
+                        unset($_SESSION['cart'][$key]);
                     }
                 }
-                if($test==0&&strcmp($product->name,$productName)==0)
-                {
-                    $_SESSION['cart'][]=$product;
-                    break;
-                }
-            }
-
-
-        }
-        
-        foreach ($_SESSION['cart'] as $key => $value) 
-        {
-            echo $value->name."-----";
-            echo $value->no."<br>";
-        }
+    header("location:yourcart.php");
      }
 
 }

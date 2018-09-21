@@ -20,8 +20,8 @@
 .pDesc_left_title
 {
 	padding:15px;	
-	color:#e6e5e5;
-	font-size: 26px;
+	color:white;
+	font-size: 22px;
 	font-weight: bold;
 }
 .pDesc_left_image
@@ -36,6 +36,7 @@
 .pDesc_left_price
 {
 	padding:15px;
+	margin-left: 5px;
 	border:1px ridge #150603;
 	display: inline-block;
 	font-size: 19px;
@@ -46,7 +47,7 @@
 .pDesc_left_button
 {
 	float: right;
-    height: 50px;
+    height: 40px;
     color:white;
     border-radius: 10px;
     background-color: darkgray;
@@ -82,6 +83,12 @@
 	line-height: 35px;
 	font-size: 22px;
 }
+.details-cart
+{
+	padding:25px;
+	font-size: 45px;
+	float: right;
+}
 
 /*For screen more than 500px*/
 @media only screen and (min-width:500px) 
@@ -107,7 +114,7 @@
 .pDesc_left_button
 {
 	float: right;
-    height: 70px;
+    height: 50px;
     border-radius: 10px;
 }
     
