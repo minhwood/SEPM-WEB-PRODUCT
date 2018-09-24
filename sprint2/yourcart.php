@@ -8,12 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="productDetails.css" />
-
    <!-- <script type="text/javascript" src="js/jquery-3.3.1.js"></script>-->
-      <script type="text/javascript" src="js/action.js"></script>
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/action.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
   <div class="container">
@@ -41,11 +39,11 @@ $total=0;
       foreach ($_SESSION['cart'] as $key => $value) 
         {
             echo 
-            "<tr>
+            "<tr class='product-row'>
               <td>$value->name</td>
-              <td>$ $value->price</td>
-              <td><input type='number' value=$value->no required></td>
-              <td>$".$value->price*$value->no."</td>
+              <td class='price'>$ $value->price</td>
+              <td><input class ='quantity-input' type='number' value=$value->no required></td>
+              <td class='subtotal' >$ ".$value->price*$value->no."</td>
               <td><a href='removeItemFromCart.php?name=$value->name&type=$key'  class='btn btn-danger'>Remove</a></td>
             </tr>";
             $total+=($value->price*$value->no);
@@ -53,7 +51,7 @@ $total=0;
     
       echo "<tr>
         <th colspan=3 >Total Price</th>
-        <td>$ $total</td>
+        <td class='total-price'>$ $total</td>
       </tr>
     </tbody>
   </table>
