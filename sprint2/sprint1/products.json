@@ -1,0 +1,115 @@
+{
+		"laptops":
+			[
+				{
+					"name":"Acer A114-31-C014",
+					"price":318,
+					"Description":"A great companion for school and office tasks, the Acer Aspire A114-31-C014 14 inch Laptop packs an Intel Celeron processor for smooth program handling and a 64GB eMMC storage for saving important documents and media files. With an estimated battery life of up to 9 hours, this laptop has enough power to keep you connected for longer.",
+					"image":"img/Acer_Aspire_A114.jpg"
+				},
+				{
+					"name":"Ollee L14FTCPW",
+					"price":278,
+					"Description":"Featuring a quad-core processor and ample storage capacity, the Ollee L14FTCPW 14.1 inch Laptop lets you multitask and stay productive, making it an ideal lightweight working companion even when you’re on the go.",
+					"image":"img/Ollee_L14FTCPW.jpg"
+				},
+				{
+					"name":"HP 14-BW082AU",
+					"price":348,
+					"Description":"Equipped with an AMD dual-core processor, HD BrightView display, and multiple USB ports (two USB 3.1, one USB 2.0), the HP 14-BW082AU 14 inch Laptop lets you take care of work and entertainment needs even when you're out and about.",
+					"image":"img/HP_14_BW082AU.jpg"
+				},
+				{
+					"name":"HP 14-BW025AU",
+					"price":318,
+					"Description":"Useful for Gamer",
+					"image":"img/HP_14_BW025AU.jpg"
+				}
+			],
+
+		"desktops":
+			[
+				{
+					"name":"HP 290-A0002A",
+					"price":468,
+					"Description":"Packed with a quad core processor, a large storage space, and a user-friendly interface, the HP Slimline 290-A0002A Desktop caters to your productivity and entertainment needs, making it a great companion for home or business settings. Carry out your productivity tasks with style, thanks to its chic, microdot pattern and slim, sleek profile.",
+					"image":"img/HP_Slimline.jpg"
+				},
+				{
+					"name":"Lenovo IC 510S-7Y",
+					"price":798,
+					"Description":"The Lenovo IC 510S-7Y Desktop makes use of cutting-edge processing technology, innovative storage hardware, and a powerful graphics chipset to help give your productivity a boost. Running on a Windows 10 operating system, it has access to more advanced security options, user-friendly interface, and better integration with compatible Windows devices",
+					"image":"img/Lenovo_IC.jpg"
+				},
+				{
+					"name":"Acer TC-780",
+					"price":1197,
+					"Description":"Powerful and practical, the Acer Aspire TC-780 i7 Desktop has a powerful processor and ample RAM to take on various productivity and entertainment tasks with ease. It also comes with a wireless keyboard and mouse combo to let you go to work right away.",
+					"image":"img/Acer_Aspire.jpg"
+				},
+				{
+					"name":"HP 570-P060A",
+					"price":1698,
+					"Description":"The Lenovo IC 510S-7Y Desktop makes use of cutting-edge processing technology, innovative storage hardware, and a powerful graphics chipset to help give your productivity a boost. Running on a Windows 10 operating system, it has access to more advanced security options, user-friendly interface, and better integration with compatible Windows devices",
+					"image":"img/HP_Pavilion.jpg"
+				}
+			],
+
+		"parts":
+			[
+				{
+					"name":"MSI Z370-A Pro",
+					"price":161,
+					"Description":"Compatible with powerful Intel processors and various graphics cards, equipped with several DIMM and PCI-E slots, and has multiple SATA 6Gb/s ports, the MSI Z370-A Pro Motherboard is a great choice for your next gaming PC. It also comes with EZ Debug LED to let you troubleshoot issues quickly.",
+					"image":"img/MSI_Z370_A.jpg"
+				},
+				{
+					"name":"B350M Mortar Arctic",
+					"price":119,
+					"Description":"Give your desktop computer a versatile backbone that accommodates a wide range of advanced upgrades with the MSI B350M Mortar Arctic Motherboard. A great investment for hardcore gamers, it features GAMING LAN with LAN protect which lets you play online or locally with minimal latency rates and manageable bandwidth usage.",
+					"image":"img/MSI_B350M.jpg"
+				},
+				{
+					"name":"MSI B350M Mortar",
+					"price":117,
+					"Description":"Use the MSI B350M Mortar Motherboard to accommodate powerful AM4-socket compatible processors and video cards, provide plenty of RAM, and support multiple internal storage devices (each sold separately), for your PC to create the ideal setup for various productivity and entertainment tasks. It also has GAMING ambient LED lights to add a stylish and illuminated look inside your computer.",
+					"image":"img/MSI_B350M_Mortar.jpg"
+				},
+				{
+					"name":"MSI B450M Pro M2",
+					"price":105,
+					"Description":"Easily set up your powerful desktop for your home or office with the MSI B450M Pro M2 Motherboard. Built with Core Boost, it also has the ideal layout and power design to suit multiple CPU cores and provide improved performance.",
+					"image":"img/MSI_B450M_Pro.jpg"
+				}
+			],
+
+		"other_parts":
+			[
+				{
+					"name":"Logitech G Pro",
+					"price":248,
+					"Description":"Designed with and for e-sports enthusiasts, the Logitech G Pro Wireless Gaming Mouse delivers unrivalled performance with its click tensioning system, ambidextrous tracking sensor, and LIGHTSPEED technology. Offering near-boundless customisation, the G Pro Mouse supports approximately 16.8 million colours to give your gaming rig a cool and professional-looking visual upgrade. ",
+					"image":"img/Logitech_G_Pro.jpg"
+				},
+				{
+					"name":"Logitech K600 TV",
+					"price":98,
+					"Description":"The Logitech K600 TV Keyboard offers a wireless design, customisable settings, and a specially-designed layout, providing convenient control for your compatible TV or computer. For reliable, wireless use, it offers a battery life of up to 12 months",
+					"image":"img/Logitech_K600.jpg"
+				},
+				{
+					"name":"Logitech Z623",
+					"price":118,
+					"Description":"Useful for Student",
+					"image":"img/Logitech_Z623.jpg"
+				},
+				{
+					"name":"Logitech MX",
+					"price":148,
+					"Description":"Useful for Gamer",
+					"image":"img/Logitech_MX.jpg"
+				}
+			]
+
+}
+	

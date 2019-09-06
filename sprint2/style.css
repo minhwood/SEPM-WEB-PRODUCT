@@ -11,7 +11,7 @@ html,body {
 
 /* Navigation bar*/
 nav {
-    background-color: #141b44;
+    background-color: #150603;
     width: 100%;
     border-bottom: solid black 2px;
     z-index: 1;
@@ -24,8 +24,11 @@ nav {
 }
 .navbar-header, .navbar-login
 {
-    vertical-align: middle;
-
+    /*vertical-align: middle;*/
+    display: inline-block;
+    float: right;
+    width: 100%;
+    text-align: center;
 }
 .navbar-login
 {
@@ -33,9 +36,8 @@ nav {
     list-style: none;
     font-size: 25px;
     background-color: transparent;
-    padding:52px 50px;
-    text-align: right;
-
+    /*padding:30px 50px;*/
+    /*text-align: right;*/
 }
 .navbar-login a
 {
@@ -56,28 +58,13 @@ nav h1
     font-size: 28px;
     padding: 35px 0px 35px 20px;
 }
-nav h1 img
+.navbar-img
 {
+    height:90px;
+    margin-bottom: 7.5px;
+    margin-top: 2.5px;
 }
 
-
-
-.nav .left-nav-item {
-    float: left;
-    padding:15px;
-    z-index:1;
-}
-
-.nav .right-nav-item {
-    float: right;
-    padding:15px;
-    z-index:1;
-}
-
-.logo {
-    margin: 0px;
-    margin-right:40px;
-}
 
 .search-input {
     border-style: solid;
@@ -116,17 +103,29 @@ nav h1 img
     padding: 5px 0px 0px 30px;
 }
 
-.login-button {
-     border-radius: 20px;
-     width: 130px;
-     height: 30px;
+.loginLogout-btn
+{
+     border-radius: 10px;
      border-style: none;
-     background-color:darkgray;
+     padding:5px 10px;
+     background-color:darkred;
      display: inline-block;
+     margin:0px 7.5px;
 }
 
-.login-button:hover {
-    background-color: blanchedalmond;
+.loginLogout-btn:hover {
+    background-color: red;
+}
+
+.loginBtn
+{
+     background-color:#5a5a60;
+     color:black;
+}
+
+.loginBtn:hover
+{
+     background-color:#8f8f93;
 }
 
 /* Side bar Navigation */
@@ -158,11 +157,18 @@ nav h1 img
     margin:0px;
 }
 
-/*.cat-title h3{
-    font-weight: bolder;
-    font-size: 30px;
-    }*/
 
+.btn-rightContinue
+{
+    float: right;
+    margin-top: 50px;
+    background-color: blue;
+}
+.btn-leftCart
+{
+    background-color: grey;
+    margin-top: 50px;
+}
 .cat-box {
     border-bottom: solid grey 2px;
     text-decoration: none;
@@ -207,7 +213,14 @@ nav h1 img
     border-radius: 10px;
     float:right; 
 }
-
+.empty-cart
+{
+border:1px grey solid;
+padding:20px;
+text-align: center;
+margin-top:calc(5% - 40px) ;
+font-size: 18px;
+}
 /* main site */
 .iframe{
     background-color: #8e8e90;
@@ -219,7 +232,7 @@ nav h1 img
 
 .product-box{
     margin: 30px 5px 0px 5px;
-    padding:10px;
+    padding:5px;
     width: 100%;
     background-color: #47474f;
     display: inline-block;
@@ -227,27 +240,43 @@ nav h1 img
     border-radius: 12.5px;
     text-align: center;
 }
+.product-box h2
+{
+    margin-top:0px;
+}
 .product-box h2 a
 {
     font-size: 20px;
     font-weight: bold;
     color:#e6e5e5;
 }
+.lastRow
+{
+    display: block;
+    width: 100%;
+}
 .product-img {
     width: 280px;
     height: 200px;
-    margin-bottom: 20px;
-    border: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .price{
     float:left;
     text-align: center;
-    width: 160px;
-    padding:10px 0px;
+    padding:7.5px 20px;
     color:#e6e5e5;
     font-size: 18px;
     background-color:  #1c0c09; 
+    border-radius: 10px;
+}
+
+.priceInCart{
+    float:left;
+    padding:7.5px 20px;
+    color:black;
+    font-size: 18px;
 }
 
 .add-cart-button {
@@ -257,7 +286,6 @@ nav h1 img
     border-radius: 10px;
     background-color: darkgray;
     border-style:solid;
-
 }
 
 .productDisplay-cart
@@ -279,18 +307,48 @@ footer h3
     margin:0;
 }
 
+    /* The Modal (background) */
+.modal {
+    /*display: block;*/
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: transparent; /* Fallback color */
+    border:1px solid red;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: white;
+    margin: 25% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    border:1px red solid;
+
+}
+
+
 /*For screen more than 500px*/
 @media only screen and (min-width:500px) 
 {
     .product-box{
         width: 48%;
+         min-width: 280px;
+    min-height: 200px;
     }
+
 }
 
 @media only screen and (min-width:1080px) 
 {
     .product-box{
         width: 24%;
+        min-width: 280px;
+    min-height: 200px;
     }
     .container
     {
@@ -318,4 +376,36 @@ footer h3
     border-radius: 10px;
 
 }
+.glyphicon-shopping-cart
+{
+    /*padding:20px;*/
+}
+
+.nav-cartBtn
+{
+    font-size: 30px;
+}
+.navbar-header, .navbar-login
+{
+    display: inline-block;
+    float: right;
+    text-align: center;
+
+}
+.navbar-login
+{
+    padding:30px 50px;
+    text-align: right;
+}
+.navbar-img
+{
+    height:140px;
+}
+.navbar-header, .navbar-login
+{
+    vertical-align: middle;
+    width: auto;
+    text-align: center;
+}
+
 }

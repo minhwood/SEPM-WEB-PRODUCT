@@ -1,0 +1,416 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New';
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+/* Navigation bar*/
+nav {
+    background-color: #150603;
+    width: 100%;
+    border-bottom: solid black 2px;
+    z-index: 1;
+    margin: 0px;
+    position:fixed;
+    overflow:hidden;
+    list-style-type: none;
+    color:white;
+    /*padding: 35px 10px;*/
+}
+
+.error_input {
+    border: solid red 1px !important;
+}
+
+.navbar-header, .navbar-login
+{
+    /*vertical-align: middle;*/
+    display: inline-block;
+    float: right;
+    width: 100%;
+    text-align: center;
+}
+.navbar-login
+{
+    text-decoration: none;
+    list-style: none;
+    font-size: 25px;
+    background-color: transparent;
+    /*padding:30px 50px;*/
+    /*text-align: right;*/
+}
+.navbar-login a
+{
+    color: white;
+
+}
+.navbar-login a:hover
+{
+    color: white;
+
+}
+
+
+nav h1
+{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 28px;
+    padding: 35px 0px 35px 20px;
+}
+.navbar-img
+{
+    height:90px;
+    margin-bottom: 7.5px;
+    margin-top: 2.5px;
+}
+
+
+.search-input {
+    border-style: solid;
+    width: 600px;
+    border-color: black;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.cart-access-li {
+    height: 100%;
+    float:right;
+    z-index: 1;
+    padding:0px;
+    border-left: solid black 2px;
+}
+
+.cart-access-li:hover{
+    background-color: blanchedalmond;
+}
+
+.cart-access {
+    width: 130px;
+    height: 100%;
+}
+
+.num-products {
+    margin: 10px 10px 5px 10px;
+    width: 70px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: darkgray;
+}
+
+.cart-logo {
+    padding: 5px 0px 0px 30px;
+}
+
+.loginLogout-btn
+{
+     border-radius: 10px;
+     border-style: none;
+     padding:5px 10px;
+     background-color:darkred;
+     display: inline-block;
+     margin:0px 7.5px;
+}
+
+.loginLogout-btn:hover {
+    background-color: red;
+}
+
+.loginBtn
+{
+     background-color:#5a5a60;
+     color:black;
+}
+
+.loginBtn:hover
+{
+     background-color:#8f8f93;
+}
+
+/* Side bar Navigation */
+.side-nav{ 
+    width: 100%;
+    height: 100%;
+    background-color: #150603;
+    color: white;
+    padding-top: 150px;
+    display: inline-block;
+    text-align: center;
+}
+
+.visible {
+    visibility: visible;
+    display: block;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.cat-title {
+    padding: 10px;
+    border: ridge grey 7.5px;
+    font-weight: bolder;
+    font-size: 30px;
+    margin:0px;
+}
+
+
+.btn-rightContinue
+{
+    float: right;
+    margin-top: 50px;
+    background-color: blue;
+}
+.btn-leftCart
+{
+    background-color: grey;
+    margin-top: 50px;
+}
+.cat-box {
+    border-bottom: solid grey 2px;
+    text-decoration: none;
+    display: inline-block;
+    padding:20px 0px;
+    color:#e6e5e5;
+    min-width: 100%;
+    background-color: #1c0c09;
+    font-weight: bolder;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+
+.cat-box-extent{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    width:100%;
+    font-size: 12;
+}
+
+.cat-box:hover {
+    /*text-decoration: none;*/
+    color:white;
+
+}
+
+
+.cat-box:visited {
+    /*color:black;*/
+}
+
+.cat-box-extent li {
+    height: 20px;
+    margin-top: 10px;
+}
+
+.cat-box-extent li input{
+    border-style: solid 1px black;
+    border-radius: 10px;
+    float:right; 
+}
+.empty-cart
+{
+border:1px grey solid;
+padding:20px;
+text-align: center;
+margin-top:calc(5% - 40px) ;
+font-size: 18px;
+}
+/* main site */
+.iframe{
+    background-color: #8e8e90;
+    width:100%;
+    height:calc(100vh); 
+    text-align: center;
+    display: inline-block;
+}
+
+.product-box{
+    margin: 30px 5px 0px 5px;
+    padding:5px;
+    width: 100%;
+    background-color: #47474f;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 12.5px;
+    text-align: center;
+}
+.product-box h2
+{
+    margin-top:0px;
+}
+.product-box h2 a
+{
+    font-size: 20px;
+    font-weight: bold;
+    color:#e6e5e5;
+}
+.lastRow
+{
+    display: block;
+    width: 100%;
+}
+.product-img {
+    width: 280px;
+    height: 200px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.price{
+    float:left;
+    text-align: center;
+    padding:7.5px 20px;
+    color:#e6e5e5;
+    font-size: 18px;
+    background-color:  #1c0c09; 
+    border-radius: 10px;
+}
+
+.priceInCart{
+    float:left;
+    padding:7.5px 20px;
+    color:black;
+    font-size: 18px;
+}
+
+.add-cart-button {
+    float: right;
+    height: 40px;
+    color:white;
+    border-radius: 10px;
+    background-color: darkgray;
+    border-style:solid;
+}
+
+.productDisplay-cart
+{
+    margin:7.5px 7.5px 0px 0px;
+    font-size: 30px;
+    float: right;
+    color: white;
+}
+
+footer
+{
+    background-color: #141b44;
+}
+footer h3
+{
+    color:white;
+    padding: 30px 0px 30px 20px;
+    margin:0;
+}
+
+    /* The Modal (background) */
+.modal {
+    /*display: block;*/
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: transparent; /* Fallback color */
+    border:1px solid red;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: white;
+    margin: 25% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    border:1px red solid;
+
+}
+
+
+/*For screen more than 500px*/
+@media only screen and (min-width:500px) 
+{
+    .product-box{
+        width: 48%;
+         min-width: 280px;
+    min-height: 200px;
+    }
+
+}
+
+@media only screen and (min-width:1080px) 
+{
+    .product-box{
+        width: 24%;
+        min-width: 280px;
+    min-height: 200px;
+    }
+    .container
+    {
+            padding-top:50      px;
+            padding-bottom: 25px;
+    }
+
+    .side-nav{ 
+    width: 18%;
+    position: fixed;
+}
+    .iframe
+    {
+    width: 100%;
+    padding-left: 18%;
+    padding-top: 150px;
+    }
+    footer
+    {
+        padding-left: 18%;
+    }
+
+    .add-cart-button {
+    height: 35px;
+    border-radius: 10px;
+
+}
+.glyphicon-shopping-cart
+{
+    /*padding:20px;*/
+}
+
+.nav-cartBtn
+{
+    font-size: 30px;
+}
+.navbar-header, .navbar-login
+{
+    display: inline-block;
+    float: right;
+    text-align: center;
+
+}
+.navbar-login
+{
+    padding:30px 50px;
+    text-align: right;
+}
+.navbar-img
+{
+    height:140px;
+}
+.navbar-header, .navbar-login
+{
+    vertical-align: middle;
+    width: auto;
+    text-align: center;
+}
+
+}

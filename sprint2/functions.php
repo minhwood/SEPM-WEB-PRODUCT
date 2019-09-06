@@ -1,8 +1,11 @@
 <?php
+if(!isset($_SESSION))
+{
 session_start();
+}
+
 class allDisplayFunctions 
 {
-
 	function displayProducts($productType)
 	{
         $url = 'products.json'; 
@@ -12,11 +15,12 @@ class allDisplayFunctions
         {
             $test=0;
             echo "<div class='product-box'>
-            <h2><a href='productDetails.php?productName=$product->name&productType=$productType'>$product->name</a></h2>
-            <a href='productDetails.php?productName=$product->name&productType=$productType'><img class='product-img' src='$product->image'></a>
-            <div class='price'>$$product->price </div>";
-            if(isset($_SESSION['cart']))
-            foreach ($_SESSION['cart'] as $key => $value)
+                <h2><a href='productDetails.php?productName=$product->name&productType=$productType'>$product->name</a></h2>
+                <a href='productDetails.php?productName=$product->name&productType=$productType'><img class='product-img' src='$product->image'></a>
+                <div class='lastRow'>
+                <div class='price'>$$product->price </div>";
+                if(isset($_SESSION['cart']))
+                foreach ($_SESSION['cart'] as $key => $value)
                 { 
                     if(strcmp($product->name,$value->name)==0)
                     {
@@ -24,12 +28,13 @@ class allDisplayFunctions
                         break;
                     }
                 }
-            if($test==0)
-            echo "<a href='cart.php?productName=$product->name&productType=$productType&page='index.php''><img class='add-cart-button ' src='img/add-cart.svg' alt='addToCartButton'>";
-            else
-            {
+                if($test==0)
+                echo "<a href='display.php?productName=$product->name&productType=$productType'><img class='add-cart-button ' src='img/add-cart.svg' alt='addToCartButton'>";
+                else
+                {
                 echo "<a href='yourcart.php' target='Test'><span class='glyphicon glyphicon-shopping-cart productDisplay-cart'></span></a>";
-            }
+                }
+                echo "</div>";
             echo "</div>";
         }
 	}
@@ -119,9 +124,8 @@ class allDisplayFunctions
         }
 	}
 
-	function addToCart($productType,$productName,$page)
+	function addToCart($productType,$productName)
 	{
-        // session_destroy();
         $test=0;
 		$url = 'products.json'; 
         $data = file_get_contents($url); 
@@ -134,26 +138,58 @@ class allDisplayFunctions
                 break;
             }
         }
-        header('Location:index.php');
      }
 
-     function removeItemFromCart($productName)
+     function removeItemFromCart($index)
     {
-        // session_destroy();
         $test=0;
         $url = 'products.json'; 
         $data = file_get_contents($url); 
         $products = json_decode($data);
         if(isset($_SESSION['cart']))
-        foreach ($_SESSION['cart'] as $key => $value)
-                { 
-                     if(strcmp($productName,$value->name)==0)
-                    {
-                        unset($_SESSION['cart'][$key]);
-                    }
-                }
+            unset($_SESSION['cart'][$index]);
+        // foreach ($_SESSION['cart'] as $key => $value)
+        //         { 
+                    //  if(strcmp($productName,$value->name)==0)
+                    // {
+                    //     unset($_SESSION['cart'][$key]);
+                    // }
+                // }
     header("location:yourcart.php");
      }
+ 
+  
+    function registerUsers($username,$password,$address,$mobile)
+    {
+        $userData= array("username"=>$username, "password"=>$password,"address"=>$address,"mobile"=>$mobile);
+        $data_results = file_get_contents('user.json');
+        $tempArray = json_decode($data_results);
+        $tempArray[]=$userData;
+        $jsonData = json_encode($tempArray);
+        // $formattedData = json_encode($userData);
+        file_put_contents('user.json',$jsonData);
+     }
+
+    function loginUsers($username,$password)
+    {
+        $url = 'user.json'; 
+        $data = file_get_contents($url); 
+        $users = json_decode($data);
+        foreach ($users as $user) 
+        {
+           if(strcmp($username, $user->username)==0&&strcmp($password, $user->password)==0){
+             $_SESSION['loggedInUser']=$username;
+            header("location:index.php");
+           }
+           else
+           {
+            echo "Failed";
+           }
+        }
+     }
+
+     
+              
 
 }
 

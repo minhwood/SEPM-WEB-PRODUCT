@@ -2,10 +2,10 @@
 include("navigation.php");?>
     <div class="side-nav"> 
         <div><h3 class="cat-title">Categories</h3>
-        <a class="cat-box" href="display.php?type=desktops" target="Test">Desktops</a>
-        <a class="cat-box" href="display.php?type=laptops" target="Test">Laptops</a>
-        <a class="cat-box" href="display.php?type=parts" target="Test">Desktop & Laptop Parts</a>
-        <a class="cat-box" href="display.php?type=other_parts" target="Test">Other Accessories</a></div>
+        <a class="cat-box" href="display.php?productType=desktops" target="Test">Desktops</a>
+        <a class="cat-box" href="display.php?productType=laptops" target="Test">Laptops</a>
+        <a class="cat-box" href="display.php?productType=parts" target="Test">Desktop & Laptop Parts</a>
+        <a class="cat-box" href="display.php?productType=other_parts" target="Test">Other Accessories</a></div>
     </div>
     <div>
         
